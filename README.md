@@ -63,6 +63,7 @@ Resposta:
 GET /top-players
 Retorna os 10 jogadores com maior GA_real, acompanhados da previsão do modelo.
 Exemplo:
+```json
 {
   "players": [
     {
@@ -74,34 +75,34 @@ Exemplo:
     }
   ]
 }
-
+````
 Como o GA_previsto é calculado
 O pipeline segue estes passos:
-Recebe dados do jogador (JSON)
-Converte em DataFrame
-Aplica one-hot encoding em:
-Pos (FW, MF, DF, GK)
-Comp (ligas)
-Garante o formato igual ao do treinamento (columns_ga_per90.pkl)
-Normaliza variáveis numéricas com o scaler salvo (scaler_ga_per90.pkl)
-Aplica o modelo (modelo_ga_per90.pkl)
-Retorna o valor previsto
+*Recebe dados do jogador (JSON)
+*Converte em DataFrame
+*Aplica one-hot encoding em:
+*Pos (FW, MF, DF, GK)
+*Comp (ligas)
+*Garante o formato igual ao do treinamento (columns_ga_per90.pkl)
+*Normaliza variáveis numéricas com o scaler salvo (scaler_ga_per90.pkl)
+*Aplica o modelo (modelo_ga_per90.pkl)
+*Retorna o valor previsto
 
 Features utilizadas no modelo:
 
-KP_per90
-PrgP_per90
-Carries_per90
-Touches_per90
-npxG
-Age
-Pos (one-hot)
-Comp (one-hot)
+*KP_per90
+*PrgP_per90
+*Carries_per90
+*Touches_per90
+*npxG
+*Age
+*Pos (one-hot)
+*Comp (one-hot)
 
-GA_real (do dataset)
-GA_real = Gls_per90 + Ast_per90
+*GA_real (do dataset)
+*GA_real = Gls_per90 + Ast_per90
 
-Executando Localmente (sem Docker)
+### Executando Localmente (sem Docker)
 Instalar dependências:
 pip install -r deploy/requirements.txt
 
