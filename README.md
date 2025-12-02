@@ -16,24 +16,27 @@ Comparar GA_real vs GA_previsto
 Visualizar os Top 10 jogadores da temporada  
 Testar via frontend ou chamadas externas (requests)
 ---
-
-## 📁 Estrutura do Projeto
 deploy/
 │── app/
-│ ├── main.py # API FastAPI
-│ ├── model_loader.py # Carregamento do modelo ML
+│   ├── main.py               # API FastAPI
+│   ├── model_loader.py       # Carregamento do modelo ML
+│
 │── model/
-│ ├── modelo_ga_per90.pkl # Modelo treinado
-│ ├── scaler_ga_per90.pkl # Scaler usado no treino
-│ ├── columns_ga_per90.pkl # Colunas usadas no treino
+│   ├── modelo_ga_per90.pkl   # Modelo treinado
+│   ├── scaler_ga_per90.pkl   # Scaler usado no treino
+│   ├── columns_ga_per90.pkl  # Colunas usadas no treino
+│
 │── requirements.txt
 │── Dockerfile
 │── docker-compose.yml
+│
 frontend/
-│── index.html # Interface web
-│── script.js # Consumo da API
-│── styles.css # Estilização
-players_stats_limpo.csv # Dataset de entrada
+│── index.html                # Interface web
+│── script.js                 # Consumo da API
+│── styles.css                # Estilização
+│
+players_stats_limpo.csv       # Dataset de entrada
+
 
 
 ---
